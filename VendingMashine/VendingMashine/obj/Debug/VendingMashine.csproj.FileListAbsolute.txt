@@ -1,0 +1,16 @@
+C:\Users\NATASHA\source\repos\VendingMashine\VendingMashine\bin\Debug\VendingMashine.exe.config
+C:\Users\NATASHA\source\repos\VendingMashine\VendingMashine\bin\Debug\VendingMashine.exe
+C:\Users\NATASHA\source\repos\VendingMashine\VendingMashine\bin\Debug\VendingMashine.pdb
+C:\Users\NATASHA\source\repos\VendingMashine\VendingMashine\obj\Debug\VendingMashine.csprojAssemblyReference.cache
+C:\Users\NATASHA\source\repos\VendingMashine\VendingMashine\obj\Debug\MainWindow.g.cs
+C:\Users\NATASHA\source\repos\VendingMashine\VendingMashine\obj\Debug\App.g.cs
+C:\Users\NATASHA\source\repos\VendingMashine\VendingMashine\obj\Debug\VendingMashine_MarkupCompile.cache
+C:\Users\NATASHA\source\repos\VendingMashine\VendingMashine\obj\Debug\VendingMashine_MarkupCompile.lref
+C:\Users\NATASHA\source\repos\VendingMashine\VendingMashine\obj\Debug\App.baml
+C:\Users\NATASHA\source\repos\VendingMashine\VendingMashine\obj\Debug\MainWindow.baml
+C:\Users\NATASHA\source\repos\VendingMashine\VendingMashine\obj\Debug\VendingMashine.g.resources
+C:\Users\NATASHA\source\repos\VendingMashine\VendingMashine\obj\Debug\VendingMashine.Properties.Resources.resources
+C:\Users\NATASHA\source\repos\VendingMashine\VendingMashine\obj\Debug\VendingMashine.csproj.GenerateResource.cache
+C:\Users\NATASHA\source\repos\VendingMashine\VendingMashine\obj\Debug\VendingMashine.csproj.CoreCompileInputs.cache
+C:\Users\NATASHA\source\repos\VendingMashine\VendingMashine\obj\Debug\VendingMashine.exe
+C:\Users\NATASHA\source\repos\VendingMashine\VendingMashine\obj\Debug\VendingMashine.pdb

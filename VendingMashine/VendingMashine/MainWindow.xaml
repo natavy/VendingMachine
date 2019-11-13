@@ -1,0 +1,90 @@
+﻿<Window x:Class="VendingMashine.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VendingMashine"
+        mc:Ignorable="d"
+        Title="Vending Mashine" Height="600" Width="500">
+    <Grid Background="BlueViolet">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Background="Aquamarine" Grid.ColumnSpan="5">
+            <TextBlock Text="Grand Vending" Style="{StaticResource TitleBlockStyle}"></TextBlock>
+        </StackPanel>
+        <ListView Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="4" ItemsSource="{Binding Items}" 
+                  Style="{StaticResource ListViewStyle}"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" ></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel>
+                        <StackPanel DockPanel.Dock="Left">
+                            <TextBlock Style="{StaticResource UserInterfaceStyle}" Text="{Binding Information.Name}"/>
+                            <TextBlock Style="{StaticResource UserInterfaceStyle}" Text="{Binding Information.Price, StringFormat=${0:0.00}}"/>
+                            <TextBlock Foreground="Red" Visibility="{Binding OutofStockMessage}"/>
+                            <Button Style="{StaticResource VendingButtonStyle}" DockPanel.Dock="Left" DataContext="{Binding}" Click="Purchase_Click">Purchase</Button>
+                        </StackPanel>
+                    </DockPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Grid.Row="5" Style="{StaticResource MoneyButtonStyle}" Click="Insert25_Click" Content="0.25" />
+        <Button Grid.Row="5" Grid.Column="1" Style="{StaticResource MoneyButtonStyle}" Click="Insert50_Click" Content="0.50" />
+        <Button Grid.Row="5" Grid.Column="2" Style="{StaticResource MoneyButtonStyle}" Click="Insert75_Click" Content="0.75" />
+        <StackPanel Grid.Row="6" Grid.ColumnSpan="3">
+            <TextBlock Style="{StaticResource UserInterfaceStyle}" Text="{Binding Bank.Inserted, StringFormat=Inserted: ${0:0.00}}"/>
+            <TextBlock Style="{StaticResource UserInterfaceStyle}" Text="{Binding Bank.Change, StringFormat=Change: ${0:0.00}}"/> 
+        </StackPanel>
+        <DockPanel Margin="5" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="3" Background="BlanchedAlmond">
+            <TextBlock DockPanel.Dock="Bottom" Style="{StaticResource UserInterfaceStyle}" Text="{Binding Bank.BankTotal, StringFormat=Earnings ${0:0.00}}"/>
+            <TextBlock DockPanel.Dock="Top" FontSize="28" Style="{StaticResource UserInterfaceStyle}" HorizontalAlignment="Center">Inventory</TextBlock>
+            <Border BorderBrush="Gray" BorderThickness="1,1,1,1">
+            <ScrollViewer>
+                <StackPanel DockPanel.Dock="Bottom">
+                <TextBlock Margin="5" Style="{StaticResource UserInterfaceStyle}" FontSize="16" Text="{Binding Items[0].InventoryDisplay}" />
+                <TextBlock Margin="5" Style="{StaticResource UserInterfaceStyle}" FontSize="16" Text="{Binding Items[1].InventoryDisplay}" />
+                <TextBlock Margin="5" Style="{StaticResource UserInterfaceStyle}" FontSize="16" Text="{Binding Items[2].InventoryDisplay}" />
+                <TextBlock Margin="5" Style="{StaticResource UserInterfaceStyle}" FontSize="16" Text="{Binding Items[3].InventoryDisplay}" />
+                <TextBlock Margin="5" Style="{StaticResource UserInterfaceStyle}" FontSize="16" Text="{Binding Items[4].InventoryDisplay}" />
+                <TextBlock Margin="5" Style="{StaticResource UserInterfaceStyle}" FontSize="16" Text="{Binding Items[5].InventoryDisplay}" />
+                <TextBlock Margin="5" Style="{StaticResource UserInterfaceStyle}" FontSize="16" Text="{Binding Items[6].InventoryDisplay}" />
+                <TextBlock Margin="5" Style="{StaticResource UserInterfaceStyle}" FontSize="16" Text="{Binding Items[7].InventoryDisplay}" />
+                <TextBlock Margin="5" Style="{StaticResource UserInterfaceStyle}" FontSize="16" Text="{Binding Items[8].InventoryDisplay}" />
+            </StackPanel>
+            </ScrollViewer>
+            </Border>
+        </DockPanel>
+
+        <StackPanel Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="3" Background="DarkKhaki">
+            <TextBlock DockPanel.Dock="Top" FontSize="28" Style="{StaticResource UserInterfaceStyle}" HorizontalAlignment="Center">Manager</TextBlock>
+            <Button Style="{StaticResource ManagerButtonStyle}" Click="Refill_Clicked">
+                Refill Supply
+            </Button>
+            <Button Style="{StaticResource ManagerButtonStyle}" Click="Empty_Clicked" >
+                Empty Supply
+            </Button>
+            <Button Style="{StaticResource ManagerButtonStyle}" Click="Withdraw_Clicked">
+                Withdraw Payment
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
